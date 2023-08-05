@@ -55,6 +55,8 @@ void PostgreSQLHandler::run()
     setThreadName("PostgresHandler");
     ThreadStatus thread_status;
 
+    LOG_DEBUG(log, "Hello World! -- from gao");
+
     session = std::make_unique<Session>(server.context(), ClientInfo::Interface::POSTGRESQL);
     SCOPE_EXIT({ session.reset(); });
 
